@@ -1,0 +1,12 @@
+.pageLayout {
+   
+    font-family: Montserrat;
+    flex-direction: column;
+    min-height: 100vh;  
+    transition: all 0.3s ease-in-out;
+}
+
+.main {
+    min-height: 100vh;
+    padding-top: 64px;
+}

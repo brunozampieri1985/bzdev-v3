@@ -1,0 +1,179 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg);
+}
+
+.icons {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  justify-content: space-between;
+  z-index: 998;
+  background-color: var(--bg);
+  padding: 0 20px;
+}
+
+.settingsIcon {
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.settingsIcon:hover {
+  color: var(--hover);
+}
+
+.settingsIcon.activeSettingsIcon {
+  color: var(--hover);
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: calc(100% - 64px);
+  flex-direction: column;
+  padding: 0 20px;
+  margin: 0;
+  gap: 20px;
+  transform: translateY(-200vh);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.settings p {
+    padding: 0;
+    margin: 0;
+}
+
+.settings.activeSettings {
+  position: fixed;
+  width: 100%;
+  transform: translateY(64px);
+  opacity: 1;  
+  background-color: var(--bg);
+
+
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 997;
+  width: 100%;
+  height: calc(100% - 64px);
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+  transform: translateY(-200vh);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  background-color: var(--bg);
+}
+
+.menu.active {
+  position: fixed;
+  transform: translateY(64px);
+  opacity: 1;
+  background-color: var(--bg);
+  z-index: 997;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.menuItem:hover {
+  color: var(--clr);
+}
+
+.menuIcon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+
+.menuIcon.active > .firstSpan {
+  transform: rotate(135deg);
+  width: 24px;
+  transition: all 0.5s ease-in-out;
+  background-color: var(--bg);
+}
+
+.menuIcon.active > .secondSpan {
+  transform: translateX(64px);
+  transition: all 0.3s ease-in-out;
+}
+
+.menuIcon.active > .thirdSpan {
+  transform: rotate(-135deg);
+  width: 24px;
+  transition: all 0.5s ease-in-out;
+  background-color: var(--bg);
+
+}
+
+.menuIcon:hover > span {
+  transition: all 0.3s ease-in-out;
+  background-color: var(--bg);
+}
+
+.firstSpan {
+  position: absolute;
+  background-color: var(--clr);
+  width: 16px;
+  height: 2px;
+  transform: translateY(-8px);
+  left: 8px;
+}
+
+.secondSpan {
+  position: absolute;
+  background-color: var(--clr);
+  width: 24px;
+  height: 2px;
+}
+.thirdSpan {
+  position: absolute;
+  background-color: var(--clr);
+  width: 20px;
+  height: 2px;
+  transform: translateY(8px);
+  left: 8px;
+}
+

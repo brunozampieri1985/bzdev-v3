@@ -1,0 +1,11 @@
+.logo {
+  display: flex;
+  font-family: 'Deltha';
+  align-items: flex-end;
+  padding: 0.5rem;
+}
+
+.dot {
+  border-radius: 50%;
+  transform: translateY(-50%);
+}

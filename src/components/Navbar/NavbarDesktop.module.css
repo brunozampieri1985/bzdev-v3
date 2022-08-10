@@ -1,0 +1,96 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  padding: 0 calc(calc(100vw - 1000px) / 2);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.settingsIcon {
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.settingsIcon:hover {
+  color: var(--hover);
+}
+
+.settingsIcon.activeSettingsIcon {
+  color: var(--hover);
+}
+
+.settings {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 996;
+  flex-direction: column;
+  padding: 20px;
+  margin: 0;
+  gap: 20px;
+  left: 20%;
+  transform: translateY(-200vh);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.settings p {
+  padding: 0;
+  margin: 0;
+}
+
+.settings.activeSettings {
+  position: fixed;
+  transform: translateY(64px);
+  opacity: 1;
+  background-color: var(--bg);
+  z-index: 996;
+  left: 20%;
+  top: 5%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--bg);
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.menuItem:hover {
+  color: var(--clr);
+}
+
+
+.settingsHeaderWrapper {
+  display: flex;
+}
+
+.settingsHeader {
+  text-align: left;
+}

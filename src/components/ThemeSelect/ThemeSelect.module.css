@@ -1,0 +1,33 @@
+.wrapper {
+    display: flex;
+    gap: 20px;
+    transition: all .2s ease-in-out;
+}
+
+.theme {
+    position: relative;
+    display: flex;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;    
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.theme:hover {
+    scale: 1.1;
+}
+
+.theme.active::after {
+    content: '';
+    position: absolute;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: var(--hover);
+    box-shadow: var(--shadow);
+    opacity: 0.5;
+    transition: all 0.3s ease-in-out;
+
+}

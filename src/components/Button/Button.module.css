@@ -1,0 +1,15 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Montserrat';
+  border: none;
+  cursor: pointer;
+  transition: all 0.8s ease-in-out;
+  color: var(--clr-txt-dark); /* fixed color */
+}

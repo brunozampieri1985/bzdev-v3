@@ -1,0 +1,22 @@
+.socials {
+    font-size: 24px;
+    color: white;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.social {
+    transition: all 0.3s ease-in-out;
+}
+
+.social:hover {
+    color: var(--hover);
+}
+
+@media (min-width: 768px) {
+    .socials {
+        justify-content: flex-start;
+    }
+}
