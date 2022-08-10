@@ -127,7 +127,9 @@ const NavbarMobile: React.FC = () => {
             <li
               className={styles.menuItem}
               style={{ '--clr': `${thm.primary}` } as React.CSSProperties}
-              key={index}>
+              key={index}
+              onClick={handleToggleMenu}
+              >
               <a href={link.to}>
                 {Icon}&nbsp;{link.name[language]}
               </a>

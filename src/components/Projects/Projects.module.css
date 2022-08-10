@@ -1,0 +1,45 @@
+.projects {
+  height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  padding-top: 64px;
+  position: relative;
+  align-items: center;
+}
+
+.title {
+  padding: 0;
+  margin: 0;
+  font-family: 'Deltha';
+  font-size: 36px;
+  color: var(--backClr);
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.title::before {
+  content: attr(data-text);
+  position: absolute;
+  color: var(--clr);
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: animate 1.5s linear forwards;
+}
+
+@keyframes animate {
+  0% {
+    width: 0;
+    border-right: 2px solid var(--clr);
+  }
+  75% {
+    width: 100%;
+    border: 0;
+    text-shadow: 0 0 5px var(--clr);
+  }
+  100% {
+    width: 100%;
+    text-shadow: 0 0 15px var(--clr);
+  }
+}

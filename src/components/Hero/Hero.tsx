@@ -1,4 +1,4 @@
-import styles from './HeroDesktop.module.css'
+import styles from './Hero.module.css'
 import Image from 'next/image'
 import data from './Hero.data'
 import { useTheme } from '@contexts/ThemeProvider'
@@ -6,7 +6,7 @@ import { useLanguage } from '@contexts/LanguageProvider'
 import useScreenSize from '@hooks/useScreenSize'
 import Socials from '@components/Socials'
 
-const HeroDesktop: React.FC = () => {
+const Hero: React.FC = () => {
   const { thm } = useTheme()
   const { language } = useLanguage()
   const screenSize = useScreenSize()
@@ -15,7 +15,7 @@ const HeroDesktop: React.FC = () => {
 
   
   return (
-    <section className={styles.container}>
+    <section id='Home' className={styles.container}>
       <div className={styles.blob}>
         <svg
           viewBox="0 0 800 500"
@@ -85,4 +85,4 @@ const HeroDesktop: React.FC = () => {
   )
 }
 
-export default HeroDesktop
+export default Hero

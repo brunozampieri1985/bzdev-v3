@@ -4,6 +4,7 @@
     padding-top: 64px;
     position: relative;
     align-items: center;
+    overflow: hidden;
 }
 
 .blob {

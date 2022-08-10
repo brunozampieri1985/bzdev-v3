@@ -16,13 +16,13 @@ type NavbarData = {
 const data = [
   {
     name: { en: 'Home', pt: 'Início' },
-    to: '/',
+    to: '#Home',
     icon: FaHome
 
   },
   {
     name: { en: 'Projects', pt: 'Projetos' },
-    to: '/projects',
+    to: '#Projects',
     icon: FaTools
 
   },
