@@ -85,9 +85,21 @@ const NavbarMobile: React.FC = () => {
             '--bg': thm.background,
           } as React.CSSProperties
         }>
-        <h2 className={styles.settingsHeader}>
-          {language === 'en' ? 'Settings' : 'Configurações'}
-        </h2>
+       <div style={{
+          display: 'flex',
+          width: '100%',
+          justifyContent: 'space-around',
+          alignItems: 'center',
+        }}>
+          <h2 className={styles.settingsHeader}>
+            {language === 'en' ? 'Settings' : 'Configurações'}
+          </h2>
+          <span onClick={handleToggleSettings} style={{
+            color: thm.primary,
+            fontSize: '1.5rem',
+            cursor: 'pointer',
+          }}>&#xfbe;</span>
+        </div>
         <p>
           {language === 'en' ? 'Choose your language' : 'Escolha seu idioma'}
         </p>
