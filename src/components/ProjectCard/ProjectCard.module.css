@@ -1,13 +1,12 @@
 .projectCard {
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
   border-radius: 0.5rem;
   perspective: 1000px;
-  box-shadow: var(--shadow)
 }
+
 .inner {
   position: relative;
   width: 100%;
@@ -15,12 +14,19 @@
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  border-radius: 0.5rem;
 }
-
 
 .projectCard:hover .inner {
-  transform: rotateY(180deg);  
+  transform: rotateY(180deg);
 }
+
+.image {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  overflow: hidden;
+}
+
 /* Position the front and back side */
 .front,
 .back {
@@ -29,19 +35,18 @@
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
+  box-shadow: var(--shadow);
+  border-radius: 0.5rem;
 }
 
-/* Style the front side (fallback if image is missing) */
-.front {
-  background-color: #bbb;
-  color: black;
-}
-
-/* Style the back side */
-.back {
-  background-color: dodgerblue;
+.back {  
   color: white;
   transform: rotateY(180deg);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
 }
 .title {
   font-size: 18px;

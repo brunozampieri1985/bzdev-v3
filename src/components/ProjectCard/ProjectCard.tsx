@@ -11,12 +11,11 @@ const ProjectCard: React.FC<Project> = ({ title, description, image, url }) => {
 
   return (
     <div
-      className={styles.projectCard}
-      style={{
+      className={styles.projectCard}>
+      <div className={styles.inner}>
+        <div className={styles.front} style={{
         '--shadow': thm.shadow,
       } as React.CSSProperties}>
-      <div className={styles.inner}>
-        <div className={styles.front}>
           <div className={styles.image}>
             <Image
               src={image}
@@ -28,7 +27,10 @@ const ProjectCard: React.FC<Project> = ({ title, description, image, url }) => {
           </div>
           <div className={styles.title}>{title}</div>
         </div>
-        <div className={styles.back}>
+        <div className={styles.back} style={{
+        '--shadow': thm.shadow,
+        background: `linear-gradient(${thm.primary} 0%, ${thm.background} 50%)`,
+      } as React.CSSProperties}>
         <div className={styles.description}>{description[language]}</div>
         </div>
       </div>
