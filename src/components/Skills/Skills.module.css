@@ -1,0 +1,10 @@
+.skills {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 100px 0;   
+    position: relative;
+    align-items: center;
+  }
+  
+  

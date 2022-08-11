@@ -28,7 +28,7 @@ const data = [
   },
   {
     name: { en: 'Skills', pt: 'Habilidades' },
-    to: '/',
+    to: '#Skills',
     icon: GiSkills
 
   },
