@@ -1,3 +1,4 @@
+import { useTheme } from '@contexts/ThemeProvider'
 import {
     SiTypescript,
     SiNextdotjs,
@@ -12,7 +13,7 @@ import {
     SiNodedotjs,
 } from 'react-icons/si'
 
-export interface TechIconProps {
+interface TechIconProps {
     tech: string
     size: number
 }
@@ -22,6 +23,7 @@ const TechStack: React.FC<TechIconProps> = ({ tech, size }) => {
     let label
     let Icon
     const IconToShow: React.FC<{ icon: React.ReactNode }> = ({ icon }) => <>{icon}</>
+    const { theme, thm } = useTheme()
     switch (tech) {
         case 'typescript':
             color = '#0070f3'
@@ -34,12 +36,12 @@ const TechStack: React.FC<TechIconProps> = ({ tech, size }) => {
             label = 'JavaScript'
             break
         case 'react':
-            color = '#61dafb'
+            color = theme.mode === 'dark' ? '#61dafb' : '#0070f3'
             Icon = <SiReact color={color} fontSize={size} />
             label = 'React'
             break
         case 'nextjs':
-            color = 'white'
+            color = theme.mode === 'dark' ? 'white' : 'black'
             Icon = <SiNextdotjs color={color} fontSize={size} />
             label = 'Next.js'
             break
@@ -49,17 +51,17 @@ const TechStack: React.FC<TechIconProps> = ({ tech, size }) => {
             label = 'Chakra UI'
             break
         case 'vercel':
-            color = '#f5f5f5'
+            color = theme.mode === 'dark' ? 'white' : 'black'
             Icon = <SiVercel color={color} fontSize={size} />
             label = 'Vercel'
             break
         case 'csharp':
-            color = '#0070f3'
+            color = theme.mode === 'dark' ? '#61dafb' : '#0070f3'
             Icon = <SiCsharp color={color} fontSize={size} />
             label = 'C#'
             break
         case '.net':
-            color = '#0070f3'
+            color = theme.mode === 'dark' ? '#61dafb' : '#0070f3'
             Icon = <SiDotnet color={color} fontSize={size} />
             label = '.NET'
             break
@@ -74,7 +76,7 @@ const TechStack: React.FC<TechIconProps> = ({ tech, size }) => {
             label = 'Jest'
             break
         case 'node':
-            color = '#009900'
+            color = theme.mode === 'dark' ? 'limegreen' : '#009900'
             Icon = <SiNodedotjs color={color} fontSize={size} />
             label = 'Node.js'
             break
