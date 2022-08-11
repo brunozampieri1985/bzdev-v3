@@ -6,5 +6,6 @@ export default interface Project {
     }
     image: string
     url: string
+    tech: string[]
   }
 

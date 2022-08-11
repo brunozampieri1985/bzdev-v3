@@ -4,18 +4,28 @@ import { useTheme } from '@contexts/ThemeProvider'
 import { useLanguage } from '@contexts/LanguageProvider'
 import Project from '@interfaces/Project'
 import React from 'react'
+import TechStack from '@components/TechStack'
 
-const ProjectCard: React.FC<Project> = ({ title, description, image, url }) => {
+const ProjectCard: React.FC<Project> = ({
+  title,
+  description,
+  image,
+  url,
+  tech,
+}) => {
   const { thm } = useTheme()
   const { language } = useLanguage()
 
   return (
-    <div
-      className={styles.projectCard}>
+    <div className={styles.projectCard}>
       <div className={styles.inner}>
-        <div className={styles.front} style={{
-        '--shadow': thm.shadow,
-      } as React.CSSProperties}>
+        <div
+          className={styles.front}
+          style={
+            {
+              '--shadow': thm.shadow,
+            } as React.CSSProperties
+          }>
           <div className={styles.image}>
             <Image
               src={image}
@@ -27,11 +37,20 @@ const ProjectCard: React.FC<Project> = ({ title, description, image, url }) => {
           </div>
           <div className={styles.title}>{title}</div>
         </div>
-        <div className={styles.back} style={{
-        '--shadow': thm.shadow,
-        background: `linear-gradient(${thm.primary} 0%, ${thm.background} 50%)`,
-      } as React.CSSProperties}>
-        <div className={styles.description}>{description[language]}</div>
+        <div
+          className={styles.back}
+          style={
+            {
+              '--shadow': thm.shadow,
+              background: `linear-gradient(${thm.primary} 0%, ${thm.background} 50%)`,
+            } as React.CSSProperties
+          }>
+          <div className={styles.description}>{description[language]}</div>
+          <div className={styles.techStack}>
+            {tech.map((t, index) => (
+              <TechStack tech={t} size={20} key={index} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

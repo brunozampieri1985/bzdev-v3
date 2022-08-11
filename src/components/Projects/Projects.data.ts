@@ -9,6 +9,7 @@ const projects: Project[] = [
       pt: 'Uma aplicação web que permite fazer pedidos de marmitas fit online.',
     },
     url: 'https://www.cozinhadenutri.com.br',
+    tech: ['react', 'nextjs', 'typescript', 'vercel']
   },
   {
     title: 'SupriMetais',
@@ -18,6 +19,7 @@ const projects: Project[] = [
       pt: 'Website institucional para um revendedor de metais',
     },
     url: 'https://www.suprimetais.com.br',
+    tech: ['react', 'nextjs', 'typescript', 'vercel']
   },
 ]
 
