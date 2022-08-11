@@ -35,8 +35,8 @@ const data = {
     pt: 'Projetos',
   },
   description: {
-    en: 'Here you can find some of my projects',
-    pt: 'Aqui você pode encontrar alguns dos meus projetos',
+    en: 'Here you can find some of my recent projects',
+    pt: 'Aqui você pode encontrar alguns dos meus projetos recentes',
   },
   projects,
 }
