@@ -8,6 +8,7 @@ const projects: Project[] = [
       en: 'A web application that allows to order food online.',
       pt: 'Uma aplicação web que permite fazer pedidos de marmitas fit online.',
     },
+    status: 100,
     url: 'https://www.cozinhadenutri.com.br',
     tech: ['react', 'nextjs', 'typescript', 'vercel']
   },
@@ -18,6 +19,7 @@ const projects: Project[] = [
       en: 'An institutional web site for a metals retailer',
       pt: 'Website institucional para um revendedor de metais',
     },
+    status: 85,
     url: 'https://www.suprimetais.com.br',
     tech: ['react', 'nextjs', 'typescript', 'vercel']
   },
@@ -28,6 +30,7 @@ const projects: Project[] = [
       en: 'My personal portfolio.',
       pt: 'Meu portifolio pessoal.',
     },
+    status: 100,
     url: 'https://www.suprimetais.com.br',
     tech: ['react', 'nextjs', 'typescript', 'vercel']
   },
@@ -38,6 +41,7 @@ const projects: Project[] = [
       en: 'This could be your project',
       pt: 'Este pode ser seu projeto',
     },
+    status: 0,
     url: '#contact',
     tech: []
   },

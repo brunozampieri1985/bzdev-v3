@@ -59,6 +59,20 @@
   margin: 20px auto;
 }
 
+.status {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.status p {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
 
 .techStack {
     display: flex;

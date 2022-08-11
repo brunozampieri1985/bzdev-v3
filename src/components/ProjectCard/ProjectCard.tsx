@@ -6,12 +6,14 @@ import Project from '@interfaces/Project'
 import React from 'react'
 import TechStack from '@components/TechStack'
 import Link from '@components/Link'
+import ProgressBar from '@components/ProgressBar'
 
 const ProjectCard: React.FC<Project> = ({
   title,
   description,
   image,
   url,
+  status,
   tech,
 }) => {
   const { thm } = useTheme()
@@ -76,6 +78,10 @@ const ProjectCard: React.FC<Project> = ({
             {tech.map((t, index) => (
               <TechStack tech={t} size={20} key={index} />
             ))}
+          </div>
+          <div className={styles.status}>
+            <p>Status: {status}%</p>
+            <ProgressBar value={status} />
           </div>
           <div className={styles.actions}>
             <Link href={url} external={linkIsExternal()}>
