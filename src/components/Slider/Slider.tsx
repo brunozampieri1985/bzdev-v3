@@ -14,6 +14,8 @@ const Slider: React.FC<SliderProps> = ({ element, data }) => {
   const { width: deviceWidth } = useScreenSize()
   const { theme, thm } = useTheme()
 
+  console.log(data)
+
   useEffect(() => {
     const handleSlidesPerScreen = () => {
       if (deviceWidth > 500) setSlidesPerScreen(2)
@@ -31,7 +33,7 @@ const Slider: React.FC<SliderProps> = ({ element, data }) => {
   }
 
   const handleRightClick = () => {
-    if (sliderIndex < 8 / slidesPerScreen - 1) {
+    if (sliderIndex < data.length / slidesPerScreen - 1) {
       setSliderIndex(sliderIndex + 1)
     }
   }
@@ -44,12 +46,14 @@ const Slider: React.FC<SliderProps> = ({ element, data }) => {
 
   return (
     <div className={styles.sliderContainer}>
-      <button
-        className={`${styles.handle} ${styles.leftHandle}`}
-        style={handlesStyles as React.CSSProperties}
-        onClick={() => handleLeftClick()}>
-        &#8249;
-      </button>
+      {data.length > slidesPerScreen && (
+        <button
+          className={`${styles.handle} ${styles.leftHandle}`}
+          style={handlesStyles as React.CSSProperties}
+          onClick={() => handleLeftClick()}>
+          &#8249;
+        </button>
+      )}
       <div
         className={styles.slider}
         style={
@@ -62,12 +66,14 @@ const Slider: React.FC<SliderProps> = ({ element, data }) => {
           <div key={index}>{createElement(element, { ...item })}</div>
         ))}
       </div>
-      <button
-        className={`${styles.handle} ${styles.rightHandle}`}
-        style={handlesStyles as React.CSSProperties}
-        onClick={() => handleRightClick()}>
-        &#8250;
-      </button>
+      {data.length > slidesPerScreen && (
+        <button
+          className={`${styles.handle} ${styles.rightHandle}`}
+          style={handlesStyles as React.CSSProperties}
+          onClick={() => handleRightClick()}>
+          &#8250;
+        </button>
+      )}
     </div>
   )
 }

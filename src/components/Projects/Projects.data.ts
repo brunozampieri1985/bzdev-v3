@@ -21,6 +21,26 @@ const projects: Project[] = [
     url: 'https://www.suprimetais.com.br',
     tech: ['react', 'nextjs', 'typescript', 'vercel']
   },
+  {
+    title: 'BZDEV.',
+    image: '/bzdev.webp',
+    description: {
+      en: 'My personal portfolio.',
+      pt: 'Meu portifolio pessoal.',
+    },
+    url: 'https://www.suprimetais.com.br',
+    tech: ['react', 'nextjs', 'typescript', 'vercel']
+  },
+  {
+    title: 'Seu projeto/Your Project',
+    image: '/your-project.webp',
+    description: {
+      en: 'This could be your project',
+      pt: 'Este pode ser seu projeto',
+    },
+    url: '#contact',
+    tech: []
+  },
 ]
 
 const data = {

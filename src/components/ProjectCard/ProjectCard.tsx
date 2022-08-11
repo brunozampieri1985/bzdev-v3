@@ -17,6 +17,30 @@ const ProjectCard: React.FC<Project> = ({
   const { thm } = useTheme()
   const { language } = useLanguage()
 
+  const linkText = () => {
+    if (url.slice(0, 1) != '#') {
+      if (language === 'en') {
+        return 'Visit'
+      } else {
+        return 'Visitar'
+      }
+    } else {
+      if (language === 'en') {
+        return 'Hire me'
+      } else {
+        return 'Contato'
+      }
+    }
+  }
+
+  const linkIsExternal = () => {
+    if (url.slice(0, 1) != '#') {
+      return true
+    } else {
+      return false
+    }
+  }
+
   return (
     <div className={styles.projectCard}>
       <div className={styles.inner}>
@@ -32,7 +56,7 @@ const ProjectCard: React.FC<Project> = ({
               src={image}
               alt={title}
               width={200}
-              height={200 / 1.77}
+              height={200 / 2}
               layout={'responsive'}
             />
           </div>
@@ -54,8 +78,8 @@ const ProjectCard: React.FC<Project> = ({
             ))}
           </div>
           <div className={styles.actions}>
-            <Link href={url} external>
-              {language === 'en' ? 'Visit' : 'Visitar'}
+            <Link href={url} external={linkIsExternal()}>
+              {linkText()}
             </Link>
           </div>
         </div>
