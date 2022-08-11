@@ -1,26 +1,18 @@
-type ProjectType = {
-  title: string
-  description: {
-    en: string
-    pt: string
-  }
-  image: string
-  url: string
-}
+import Project from "@interfaces/Project"
 
-const projects: ProjectType[] = [
+const projects: Project[] = [
   {
     title: 'Cozinha de Nutri',
-    image: '',
+    image: '/cozinhadenutri.webp',
     description: {
-      en: 'A web application that allows you to order food online.',
-      pt: 'Uma aplicação web que permite você fazer pedidos de marmitas fit online.',
+      en: 'A web application that allows to order food online.',
+      pt: 'Uma aplicação web que permite fazer pedidos de marmitas fit online.',
     },
     url: 'https://www.cozinhadenutri.com.br',
   },
   {
     title: 'SupriMetais',
-    image: '',
+    image: '/suprimetais.webp',
     description: {
       en: 'An institutional web site for a metals retailer',
       pt: 'Website institucional para um revendedor de metais',

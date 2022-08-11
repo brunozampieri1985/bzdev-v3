@@ -1,9 +1,14 @@
 import { useTheme } from '@contexts/ThemeProvider'
 import useScreenSize from '@hooks/useScreenSize'
-import React, { useEffect, useState } from 'react'
+import React, { createElement, useEffect, useState } from 'react'
 import styles from './Slider.module.css'
 
-const Slider: React.FC = () => {
+type SliderProps = {
+  element: React.ElementType
+  data: any[]
+}
+
+const Slider: React.FC<SliderProps> = ({ element, data }) => {
   const [sliderIndex, setSliderIndex] = useState(0)
   const [slidesPerScreen, setSlidesPerScreen] = useState(1)
   const { width: deviceWidth } = useScreenSize()
@@ -43,7 +48,7 @@ const Slider: React.FC = () => {
         className={`${styles.handle} ${styles.leftHandle}`}
         style={handlesStyles as React.CSSProperties}
         onClick={() => handleLeftClick()}>
-        <div className={styles.handleText}>&#8249;</div>
+        &#8249;
       </button>
       <div
         className={styles.slider}
@@ -53,20 +58,15 @@ const Slider: React.FC = () => {
             '--items-per-screen': slidesPerScreen,
           } as React.CSSProperties
         }>
-        <div className={styles.sliderImg}>1</div>
-        <div className={styles.sliderImg}>2</div>
-        <div className={styles.sliderImg}>3</div>
-        <div className={styles.sliderImg}>4</div>
-        <div className={styles.sliderImg}>5</div>
-        <div className={styles.sliderImg}>6</div>
-        <div className={styles.sliderImg}>7</div>
-        <div className={styles.sliderImg}>8</div>
+        {data.map((item, index) => (
+          <div key={index}>{createElement(element, { ...item })}</div>
+        ))}
       </div>
       <button
         className={`${styles.handle} ${styles.rightHandle}`}
         style={handlesStyles as React.CSSProperties}
         onClick={() => handleRightClick()}>
-        <div className={styles.handleText}>&#8250;</div>
+        &#8250;
       </button>
     </div>
   )

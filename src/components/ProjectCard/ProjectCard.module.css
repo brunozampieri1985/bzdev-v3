@@ -1,0 +1,51 @@
+.projectCard {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  perspective: 1000px;
+  box-shadow: var(--shadow)
+}
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+
+.projectCard:hover .inner {
+  transform: rotateY(180deg);  
+}
+/* Position the front and back side */
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px auto;
+}

@@ -4,7 +4,8 @@ import { useLanguage } from '@contexts/LanguageProvider'
 import { useInView } from 'react-intersection-observer'
 import data from './Projects.data'
 import SectionTitle from '@components/SectionTitle'
-import Slider from '@components/Slider/Slider'
+import Slider from '@components/Slider'
+import ProjectCard from '@components/ProjectCard'
 
 const Projects: React.FC = () => {
   const { language } = useLanguage()
@@ -17,7 +18,7 @@ const Projects: React.FC = () => {
         {inView && <SectionTitle title={data.title[language]} />}
       </div>
       <p>{data.description[language]}</p>
-      <Slider />
+      <Slider data={data.projects} element={ProjectCard} />
     </section>
   )
 }
