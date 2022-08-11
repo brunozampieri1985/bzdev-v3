@@ -5,6 +5,7 @@ import { useLanguage } from '@contexts/LanguageProvider'
 import Project from '@interfaces/Project'
 import React from 'react'
 import TechStack from '@components/TechStack'
+import Link from '@components/Link'
 
 const ProjectCard: React.FC<Project> = ({
   title,
@@ -51,6 +52,11 @@ const ProjectCard: React.FC<Project> = ({
             {tech.map((t, index) => (
               <TechStack tech={t} size={20} key={index} />
             ))}
+          </div>
+          <div className={styles.actions}>
+            <Link href={url} external>
+              {language === 'en' ? 'Visit' : 'Visitar'}
+            </Link>
           </div>
         </div>
       </div>
