@@ -66,7 +66,7 @@ const ProjectCard: React.FC<Project> = ({
           className={styles.back}
           style={
             {
-              '--shadow': thm.shadow,
+              '--shadow-clr': thm.primary,
               color: thm.text,
               background: `linear-gradient(${thm.primary} 0%, ${thm.background} 50%)`,
             } as React.CSSProperties

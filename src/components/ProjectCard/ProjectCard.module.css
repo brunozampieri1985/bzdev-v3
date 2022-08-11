@@ -35,12 +35,14 @@
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
-  box-shadow: var(--shadow);
   border-radius: 0.5rem;
 }
 
-.back {  
-  color: white;
+.front {
+  box-shadow: var(--shadow);  
+}
+
+.back {    
   transform: rotateY(180deg);
   font-weight: bold;
   display: flex;
@@ -48,6 +50,7 @@
   align-items: center;
   justify-content: center;
   padding: 5px;
+  box-shadow: 0 0 10px var(--shadow-clr);
 }
 .title {
   font-size: 18px;

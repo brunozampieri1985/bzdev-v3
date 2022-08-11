@@ -14,11 +14,9 @@ const Slider: React.FC<SliderProps> = ({ element, data }) => {
   const { width: deviceWidth } = useScreenSize()
   const { theme, thm } = useTheme()
 
-  console.log(data)
-
   useEffect(() => {
     const handleSlidesPerScreen = () => {
-      if (deviceWidth > 500) setSlidesPerScreen(2)
+      if (deviceWidth > 500) {setSlidesPerScreen(2)}
       if (deviceWidth > 800) setSlidesPerScreen(3)
       if (deviceWidth > 1100) setSlidesPerScreen(4)
       if (deviceWidth < 500) setSlidesPerScreen(1)
