@@ -1,24 +1,22 @@
-import { useInView } from 'react-intersection-observer'
-import { GiSkills } from 'react-icons/gi'
 import styles from './Skills.module.css'
-import { useTheme } from '@contexts/ThemeProvider'
-import { useLanguage } from '@contexts/LanguageProvider'
-import SectionTitle from '@components/SectionTitle'
 import data from './Skills.data'
+import { useLanguage } from '@contexts/LanguageProvider'
+import SkillCard from '@components/SkillCard'
+import Section from '@components/Section'
+import { GiSkills } from 'react-icons/gi'
 
 const Skills: React.FC = () => {
-  const { language } = useLanguage()
-  const { theme, thm } = useTheme()
-  const { inView, ref } = useInView({ threshold: 1 })
-
+  const { language } = useLanguage()  
+  const { frontend, backend, testing } = data.skills
+  
   return (
-    <section id="Skills" className={styles.skills}>
-      <div ref={ref}>
-        {inView && <SectionTitle title={data.title[language]} icon={GiSkills} />}
+    <Section id="Skills" title={data.title[language]} description={data.description[language]} icon={GiSkills}>
+      <div className={styles.frontend}> 
+            {frontend.map((skill, index) => (
+              <SkillCard key={index} skill={skill} />
+            ))}
       </div>
-      <p>{data.description[language]}</p>
-      
-    </section>
+    </Section>
   )
 }
 

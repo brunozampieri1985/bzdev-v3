@@ -42,7 +42,7 @@ const projects: Project[] = [
       pt: 'Este pode ser seu projeto',
     },
     status: 0,
-    url: '#contact',
+    url: '#Contact',
     tech: []
   },
 ]

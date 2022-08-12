@@ -34,7 +34,7 @@ const data = [
   },
   {
     name: { en: 'Contact', pt: 'Contato' },
-    to: '/',
+    to: '#Contact',
     icon: BsChatRightDotsFill
   },
 ]

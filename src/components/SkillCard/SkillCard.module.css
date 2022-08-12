@@ -1,0 +1,104 @@
+.card {
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .value {
+  position: relative;
+  width: 104px;
+  height: 104px;
+}
+
+.card .value svg {
+  position: relative;
+  width: 104px;
+  height: 104px;
+  transform: rotate(270deg);
+}
+
+.card .value svg circle {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke-width: 2;
+  stroke: var(--stroke);
+  transform: translate(2px, 2px);
+}
+.card .value svg circle:nth-child(2) {
+  stroke: var(--clr);
+  stroke-dasharray: 314;
+  stroke-dashoffset: var(--num);
+  opacity: 0;
+  animation: dash 1s linear forwards;
+  animation-delay: 2s;
+}
+
+@keyframes dash {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.dot {
+  position: absolute;
+  inset: 2px;
+  transform: var(--dot);
+  animation: animateDot 2s linear forwards;
+  z-index: 10;
+}
+
+@keyframes animateDot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: var(--dot);
+  }
+}
+
+.dot::before {
+  content: '';
+  position: absolute;
+  background-color: var(--clr);
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  z-index: 5;
+  box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr);
+}
+
+.number {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.number h2 {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--clr);
+}
+.number span {
+  font-size: 12px;
+}
+
+.number p {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+}

@@ -1,6 +1,7 @@
+import Skill from "@interfaces/Skill"
 
 
-const data = {
+const data: Skill = {
   title: {
     en: 'Skills',
     pt: 'Habilidades',
@@ -12,47 +13,47 @@ const data = {
   skills: {
     frontend: [
       {
-        skill: 'HTML',
+        name: 'HTML',
         value: 80,
       },
       {
-        skill: 'CSS',
+        name: 'CSS',
         value: 80,
       },
       {
-        skill: 'JavaScript',
+        name: 'JavaScript',
         value: 75,
       },
       {
-        skill: 'TypeScript',
+        name: 'TypeScript',
         value: 75,
       },
       {
-        skill: 'React.JS',
+        name: 'React.JS',
         value: 75,
       },
       {
-        skill: 'Next.JS',
+        name: 'Next.JS',
         value: 70,
       },
       {
-        skill: 'Redux',
+        name: 'Redux',
         value: 60,
       },
     ],
     backend: [
       {
-        skill: 'Node.JS',
+        name: 'Node.JS',
         value: 70,
       },
       {
-        skill: 'Rest API',
+        name: 'Rest API',
         value: 70,
       },
     ],
     testing: [
       {
-        skill: 'Unit Test - Jest',
+        name: 'Unit Test - Jest',
         value: 50,
       },
     ],
