@@ -12,7 +12,7 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   background-color: var(--bg);
-  color: var(--clr-txt-dark); /* fixed color */
+  color: var(--color);  
 }
 
 .button:hover {

@@ -12,6 +12,8 @@ const Button: React.FC<ButtonProps> = (props) => {
 
 
   const backgroundColor = variant === 'primary' || variant === undefined ? thm.primary : thm.background
+  const hoverColor = variant === 'primary' || variant === undefined ? thm.hover : thm.contrast
+  const color = variant === 'primary' || variant === undefined ? 'white' : thm.primary
   return (
     <button
       className={styles.button}
@@ -19,7 +21,8 @@ const Button: React.FC<ButtonProps> = (props) => {
         width: fullWidth ? '100%' : 'auto',
         maxWidth: fullWidth ? '100%' : 'max-content',
         '--bg': backgroundColor,
-        '--hover': variant === 'primary' || variant === undefined ? thm.hover : thm.contrast,
+        '--hover': hoverColor,
+        '--color': color,
       } as React.CSSProperties}
       {...rest}
     />
