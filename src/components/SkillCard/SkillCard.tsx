@@ -9,7 +9,7 @@ type SkillCardProps = {
 
 const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
   const { thm, theme } = useTheme()
-  const { inView, ref } = useInView({ threshold: 0 })  
+  const { inView, ref } = useInView({ threshold: 0 })
   const getColor = (skill: string) => {
     let color
     switch (skill) {
@@ -41,8 +41,8 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
         color = theme.mode === 'dark' ? 'limegreen' : '#009900'
         break
       case 'Rest API':
-        color = theme.mode === 'dark' ? 'white' : 'black'       
-        break 
+        color = theme.mode === 'dark' ? 'white' : 'black'
+        break
       default:
         color = 'white'
     }
@@ -50,8 +50,8 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
   }
   return (
     <div ref={ref}>
-      {inView && (
-        <div className={styles.card}>
+      <div className={styles.card}>
+        {inView && (
           <div
             className={styles.value}
             style={
@@ -76,8 +76,8 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
               <p>{skill.name}</p>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   )
 }
