@@ -62,6 +62,7 @@ export const useTheme = () => {
     primary: `var(--clr-primary-${theme.color})`,
     hover: `var(--clr-primary-${theme.color}-hover)`,
     shadow: `var(--shadow-${theme.mode})`,
+    contrast: `var(--clr-bg-contrast-${theme.mode})`,
   }
   return { theme, thm, themeList, changeTheme }
 }

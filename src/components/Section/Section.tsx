@@ -11,7 +11,7 @@ type SectionProps = {
 }
 
 const Section: React.FC<SectionProps> = ({ description, icon, id, title, children }) => {
-  const { inView, ref } = useInView({ threshold: 1 })
+  const { inView, ref } = useInView({ threshold: 0 })
 
   return (
     <section id={id} className={styles.session}>

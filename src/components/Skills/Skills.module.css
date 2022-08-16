@@ -1,16 +1,44 @@
-.skills {
-    min-height: 100vh;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;  
+  margin: 12px auto;  
+  padding: 0 15px;
+}
+
+.tab {
     display: flex;
-    flex-direction: column;
-    padding: 100px 0;   
-    position: relative;
+    height: 36px;
+}
+
+.tabItem {
+    padding: 0 15px;
+    height: 36px;
+    display: flex;    
     align-items: center;
-  }
-  
-.frontend {
-    position: relative;
+    justify-content: center;    
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.tabItem:hover {
+    color: var(--hover);
+}
+
+
+.content {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: var(--bg);
+}
+
+.content.active {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
 }

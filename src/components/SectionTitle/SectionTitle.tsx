@@ -1,6 +1,7 @@
 import styles from './SectionTitle.module.css'
 import { useTheme } from '@contexts/ThemeProvider'
 import { createElement } from 'react'
+import useScreenSize from '@hooks/useScreenSize'
 
 type SectionTitleProps = {
   title: string
@@ -13,6 +14,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   description,
   icon,
 }) => {
+  const { width, height } = useScreenSize()
   const { theme, thm } = useTheme()
 
   return (
@@ -31,7 +33,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
           <span>{createElement(icon)}</span>
         </h1>
       </div>
-      <p>{description}</p>
+      {width > 768 && <p>{description}</p>}
     </>
   )
 }

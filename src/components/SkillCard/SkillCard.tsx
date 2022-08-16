@@ -40,8 +40,9 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
       case 'Node.JS':
         color = theme.mode === 'dark' ? 'limegreen' : '#009900'
         break
-      case 'Rest Api':
-        color = theme.mode === 'dark' ? 'limegreen' : '#009900'
+      case 'Rest API':
+        color = theme.mode === 'dark' ? 'white' : 'black'       
+        break 
       default:
         color = 'white'
     }

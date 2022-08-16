@@ -7,3 +7,52 @@
     align-items: center;
   }
   
+
+  .container {
+    display: flex;
+    width: 100%;
+    height: 100%;    
+  }
+
+  .socials {
+    display: flex;
+    width: 40%;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .form {    
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+    height: 100%;    
+  }
+
+  .actions {
+    display: flex;
+    width: 100%;    
+    justify-content: center;
+    padding-left: 15px;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      width: 100%;   
+      height: 100vh;   
+      flex-direction: column;
+      bottom: 0;
+      margin-top: 15px;
+    }
+    .socials {
+      height: 15%;
+      width: 100%;
+    }
+    .form {
+      height: 70%;
+      width: 100%;
+    }
+  }

@@ -10,7 +10,7 @@ const projects: Project[] = [
     },
     status: 100,
     url: 'https://www.cozinhadenutri.com.br',
-    tech: ['react', 'nextjs', 'typescript', 'vercel']
+    tech: ['css', 'react.js', 'next.js', 'typescript', 'vercel']
   },
   {
     title: 'SupriMetais',
@@ -21,7 +21,7 @@ const projects: Project[] = [
     },
     status: 85,
     url: 'https://www.suprimetais.com.br',
-    tech: ['react', 'nextjs', 'typescript', 'vercel']
+    tech: ['css', 'react.js', 'Next.JS', 'typescript', 'vercel']
   },
   {
     title: 'BZDEV.',
@@ -32,7 +32,7 @@ const projects: Project[] = [
     },
     status: 100,
     url: 'https://www.suprimetais.com.br',
-    tech: ['react', 'nextjs', 'typescript', 'vercel']
+    tech: ['css', 'react.js', 'next.js', 'typescript', 'vercel', 'unit test - jest']
   },
   {
     title: 'Seu projeto/Your Project',

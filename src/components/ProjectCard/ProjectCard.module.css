@@ -39,10 +39,10 @@
 }
 
 .front {
-  box-shadow: var(--shadow);  
+  box-shadow: var(--shadow);
 }
 
-.back {    
+.back {
   transform: rotateY(180deg);
   font-weight: bold;
   display: flex;
@@ -75,12 +75,22 @@
 }
 
 .techStack {
-    display: flex;
-    gap: 15px;
-    margin-top: 15px;
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
 }
 
 .actions {
   font-size: 20px;
   margin-top: 25px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 14px;
+    margin: 10px auto;
+  }
+  .status p {
+    font-size: 12px;
+  }
 }

@@ -2,7 +2,9 @@
   --clr-txt-light: #1A202C;
   --clr-txt-dark: #f5f5f5;
   --clr-bg-light: #f5f5f5;
+  --clr-bg-contrast-light: #e4e4e4;
   --clr-bg-dark: #1A202C;
+  --clr-bg-contrast-dark: #171b22;
   --shadow-light: 0px 0px 20px rgba(0, 0, 0, 0.2);
   --shadow-dark: 0px 0px 20px #000;
   --clr-primary-blue: #4299e1;

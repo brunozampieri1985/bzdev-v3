@@ -78,7 +78,7 @@ const Hero: React.FC = () => {
         color: thm.primary, 
       } as React.CSSProperties}>{data.greetings[language]}</h2>
         <p className={styles.description}>{data.description[language]}</p>
-        <Socials/>
+        <Socials size={24}/>
       </div>
    
     </section>

@@ -14,7 +14,6 @@ export default interface Skill {
   }
   skills: {
     frontend: SkillValue[]
-    backend: SkillValue[]
-    testing: SkillValue[]
+    others: SkillValue[]   
   }
 }

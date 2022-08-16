@@ -41,7 +41,7 @@ const data: Skill = {
         value: 60,
       },
     ],
-    backend: [
+    others: [
       {
         name: 'Node.JS',
         value: 70,
@@ -50,8 +50,6 @@ const data: Skill = {
         name: 'Rest API',
         value: 70,
       },
-    ],
-    testing: [
       {
         name: 'Unit Test - Jest',
         value: 50,

@@ -54,7 +54,7 @@
     height: 3px;
     top: calc(50% - 1.5px);
     left: 10px;
-    background:var(--bg);
+    background: white;
     border-radius: 10px;    
     transform: scale(.98, .96);
     transition: .2s ease-in-out;
