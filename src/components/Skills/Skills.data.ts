@@ -35,11 +35,7 @@ const data: Skill = {
       {
         name: 'Next.JS',
         value: 70,
-      },
-      {
-        name: 'Redux',
-        value: 60,
-      },
+      },    
     ],
     others: [
       {
