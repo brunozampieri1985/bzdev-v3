@@ -1,5 +1,4 @@
 import styles from './Contact.module.css'
-import { useTheme } from '@contexts/ThemeProvider'
 import { useLanguage } from '@contexts/LanguageProvider'
 import data from './Contact.data'
 import { BsChatRightDotsFill } from 'react-icons/bs'
@@ -9,16 +8,50 @@ import Input from '@components/Input'
 import { useState } from 'react'
 import useScreenSize from '@hooks/useScreenSize'
 import Button from '@components/Button'
+import SendMail from 'src/lib/sendmail'
 
 const Contact: React.FC = () => {
-  const { language } = useLanguage()
-  const { theme, thm } = useTheme()
-  const { width, height } = useScreenSize()
+  const { language } = useLanguage()  
+  const { width } = useScreenSize()
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: {
+      content: '',
+      valid: null,
+      errorMessage: {
+        en: 'Name is required',
+        pt: 'Nome é obrigatório',
+      },
+    },
+    email: {
+      content: '',
+      valid: null,
+      errorMessage: {
+        en: 'Please insert a valid email',
+        pt: 'Por favor insira um email válido',
+      },
+    },
+    message: {
+      content: '',
+      valid: null,
+      errorMessage: {
+        en: 'Message is required',
+        pt: 'Mensagem é obrigatória',
+      },
+    },
   })
+
+  const validate = {
+    text: {
+      test: (value: string) => value.length > 3,
+    },
+    email: {
+      test: (value: string) => {
+        let regex =
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        return regex.test(value)
+      },
+    },
+  }
 
   const placeholders = {
     name: {
@@ -35,6 +68,32 @@ const Contact: React.FC = () => {
     },
   }
 
+  const handleChange = (
+    field: string,
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    // change content
+    setFormData({
+      ...formData,
+      [field]: {
+        ...formData[field as keyof typeof formData],
+        content: e.target.value,
+      },
+    })
+    // validate content
+    var fieldType = field === 'email' ? 'email' : 'text'
+    var validateField = validate[fieldType as 'email' | 'text'].test(
+      e.target.value
+    )
+    setFormData({
+      ...formData,
+      [field]: {
+        ...formData[field as keyof typeof formData],
+        valid: validateField,
+      },
+    })
+  }
+
   return (
     <Section
       id="Contact"
@@ -45,40 +104,33 @@ const Contact: React.FC = () => {
         <div className={styles.form}>
           <Input
             type="text"
-            value={formData.name}
+            valid={formData.name.valid}
+            value={formData.name.content}
+            errorMsg={formData.name.errorMessage[language]}
             placeholder={placeholders.name[language]}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                name: e.target.value,
-              })
-            }
+            onChange={(e) => handleChange('name', e)}
           />
           <Input
             type="email"
-            value={formData.email}
+            value={formData.email.content}
+            valid={formData.email.valid}
+            errorMsg={formData.email.errorMessage[language]}
             placeholder={placeholders.email[language]}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                email: e.target.value,
-              })
-            }
+            onChange={(e) => handleChange('email', e)}
           />
           <Input
             type="textarea"
-            value={formData.message}
+            valid={formData.message.valid}
+            value={formData.message.content}
+            errorMsg={formData.message.errorMessage[language]}
             placeholder={placeholders.message[language]}
-            onChange={(e) =>
-              setFormData({
-                ...formData,
-                message: e.target.value,
-              })
-            }
+            onChange={(e) => handleChange('message', e)}
           />
           <div className={styles.actions}>
             <Button>{language === 'en' ? 'Send' : 'Enviar'}</Button>
-            <Button variant='secondary'>{language === 'en' ? 'Clear' : 'Limpar'}</Button>
+            <Button variant="secondary">
+              {language === 'en' ? 'Clear' : 'Limpar'}
+            </Button>
           </div>
         </div>
         <div className={styles.socials}>

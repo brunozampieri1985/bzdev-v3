@@ -1,31 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Input.module.css'
 import { FaCheckCircle } from 'react-icons/fa'
 import { MdError } from 'react-icons/md'
 import { useTheme } from '@contexts/ThemeProvider'
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  valid?: boolean
-}
-const validate = {
-  text: {
-    test: (value: string) => value.length > 3,
-    feedback: 'Please enter at least 3 characters',
-  },
-  email: {
-    test: (value: string) => {
-      let regex =
-        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      return regex.test(value)
-    },
-    feedback: 'Please enter a valid email address',
-  },
+  valid?: boolean | null
+  errorMsg?: string
 }
 
 const Input: React.FC<InputProps> = ({
   type,
   placeholder,
   valid,
+  errorMsg,
   ...props
 }) => {
   const { theme, thm } = useTheme()
@@ -33,26 +21,50 @@ const Input: React.FC<InputProps> = ({
   const backgroundColor = theme.mode === 'light' ? '#fff' : 'rgba(0,0,0,0.3)'
   const color = thm.text
   const boxShadow = thm.shadow
+
+  const feedback = {
+    styles: valid == null ? 'trasnparent' : valid ? 'green' : 'red',
+    icon: valid == null ? null : valid ? <FaCheckCircle /> : <MdError />,
+  }
+
   return (
-    <div className={styles.inputBox}>
+    <div
+      className={styles.inputBox}
+      style={
+        {
+          '--focus': thm.primary,
+        } as React.CSSProperties
+      }>
       {type === 'textarea' ? (
-        <textarea placeholder={placeholder} style={{
-          backgroundColor,
-          color,
-          boxShadow,
-        }}/>
-      ) : (
-        <input
+        <textarea
           required
           placeholder={placeholder}
-          type={type}
           style={{
             backgroundColor,
             color,
             boxShadow,
           }}
-          {...props}
         />
+      ) : (
+        <>
+          <input
+            required
+            placeholder={placeholder}
+            type={type}
+            style={{
+              backgroundColor,
+              color,
+              boxShadow,
+            }}
+            {...props}
+          />
+          <span
+            style={{
+              color: feedback.styles,
+            }}>
+            {feedback.icon}
+          </span>
+        </>
       )}
     </div>
   )
