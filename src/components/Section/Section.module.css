@@ -1,8 +1,8 @@
 .session {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 100px 0;   
+    padding-top: 100px;   
     position: relative;
     align-items: center;
   }

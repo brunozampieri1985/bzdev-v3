@@ -18,7 +18,7 @@
   flex: 0 0 calc(100% / var(--items-per-screen));
   max-width: calc(100% / var(--items-per-screen));
   padding: 12px;
-  aspect-ratio: 16 / 12;  
+  aspect-ratio: 16 / 12;
 }
 
 .handle {
@@ -50,3 +50,8 @@
   border-bottom-right-radius: 0;
 }
 
+@media (max-width: 500px) {
+  .slider > div {
+    aspect-ratio: 1 / 1;
+  }
+}

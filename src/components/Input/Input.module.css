@@ -67,3 +67,11 @@
   text-transform: uppercase;
   font-weight: bold;
 }
+
+.inputBox .errorMsg {
+  position: absolute;
+  font-size: 12px;
+  top: -20px;
+  left: 50%;
+  color: red;
+}

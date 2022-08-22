@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
 import styles from './Input.module.css'
 import { FaCheckCircle } from 'react-icons/fa'
 import { MdError } from 'react-icons/md'
 import { useTheme } from '@contexts/ThemeProvider'
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
   valid?: boolean | null
   errorMsg?: string
 }
@@ -23,7 +23,7 @@ const Input: React.FC<InputProps> = ({
   const boxShadow = thm.shadow
 
   const feedback = {
-    styles: valid == null ? 'trasnparent' : valid ? 'green' : 'red',
+    styles: valid == null ? 'transparent' : valid ? 'green' : 'red',
     icon: valid == null ? null : valid ? <FaCheckCircle /> : <MdError />,
   }
 
@@ -36,15 +36,24 @@ const Input: React.FC<InputProps> = ({
         } as React.CSSProperties
       }>
       {type === 'textarea' ? (
-        <textarea
-          required
-          placeholder={placeholder}
-          style={{
-            backgroundColor,
-            color,
-            boxShadow,
-          }}
-        />
+        <>
+          <textarea
+            required
+            placeholder={placeholder}
+            style={{
+              backgroundColor,
+              color,
+              boxShadow,
+            }}
+            {...props}
+          />
+          <span
+            style={{
+              color: feedback.styles,
+            }}>
+            {feedback.icon}
+          </span>       
+        </>
       ) : (
         <>
           <input
@@ -63,7 +72,7 @@ const Input: React.FC<InputProps> = ({
               color: feedback.styles,
             }}>
             {feedback.icon}
-          </span>
+          </span>       
         </>
       )}
     </div>

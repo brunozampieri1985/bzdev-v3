@@ -68,6 +68,11 @@
   margin-top: 15px;
 }
 
+.description {
+  font-size: 14px;
+  text-align: center;
+}
+
 .status p {
   margin: 0;
   padding: 0;
@@ -87,10 +92,16 @@
 
 @media (max-width: 768px) {
   .title {
-    font-size: 14px;
+    font-size: 10px;
     margin: 10px auto;
   }
   .status p {
-    font-size: 12px;
+    font-size: 10px;
+  }
+  .description {
+    font-size: 10px;
+  }
+  .techStack {
+    gap: 8px;
   }
 }

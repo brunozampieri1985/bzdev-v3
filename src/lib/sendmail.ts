@@ -8,8 +8,7 @@ export default class SendMail {
     this.from = from
     this.email = email
     this.message = message
-  }
- 
+  } 
 
   createMessage() {
     return {
@@ -19,8 +18,9 @@ export default class SendMail {
       text: this.message,
     }
   }
+  
   async send() {
-    SgMail.setApiKey(process.env.SENDGRID_API_KEY as string)
+    SgMail.setApiKey(process.env.SENDGRID_API_KEY as string)    
     const result = await SgMail.send(this.createMessage())
     return result
   }
